@@ -1,0 +1,20 @@
+int pr = 0;
+int speaker = 12;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(speaker,OUTPUT);
+}
+
+void loop() {
+int valeur = analogRead(pr);
+  Serial.print(analogRead(pr));
+  Serial.print("\n");
+  delay(10);
+  if(valeur >= 770){
+    tone(speaker, 16000);
+     }else{
+    noTone(speaker);
+  }
+  
+}
